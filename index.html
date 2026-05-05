@@ -1,79 +1,612 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Advice Page</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-<body>
-    <nav>
-        <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="advice.html">Advice</a></li>
-        <li><a href="Team.html">Our Team</a></li>
-        </ul>        
-    </nav>
-<hr>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="advice.html">Advice</a></li>
+                <li><a href="Team.html">Our Team</a></li>
+            </ul>
+        </nav>
+        <hr />
+        <h1>MBTI Advice</h1>
+        <p>Click on your personality type below for more info!</p>
 
-    <div id="header">
-        <h1>Welcome to the World of MBTI</h1>
-        <p><strong>Understanding personalities to build better futures.</strong></p>
-    </div>
+        <div id="quick-jump">
+            <h3>Analysts (Thinking & Intuitive)</h3>
+            <a href="#intj" class="card intj">INTJ</a>
+            <a href="#intp" class="card intp">INTP</a>
+            <a href="#entj" class="card entj">ENTJ</a>
+            <a href="#entp" class="card entp">ENTP</a>
 
-    
+            <h3>Diplomats (Feeling & Intuitive)</h3>
+            <a href="#infj" class="card infj">INFJ</a>
+            <a href="#infp" class="card infp">INFP</a>
+            <a href="#enfj" class="card enfj">ENFJ</a>
+            <a href="#enfp" class="card enfp">ENFP</a>
 
-<div class="section definition">
-        <h2>What is MBTI?</h2>
-    <p>The Myers-Briggs Type Indicator (MBTI) is a recognized psychological tool derived from the work of Carl Jung, created by Isabel Briggs Myers and Katharine Cook Briggs. <br>
-     Its core purpose is to map out the fundamental ways people prefer to interact with the world. </p>
-    
-     The MBTI identifies 16 distinct personality types by assessing individual preferences across four crucial dichotomies:
-    <ol>
-      <li> Extraversion (E) vs. Introversion (I): Dictates where you gain and direct your energy. </li>
-      <li> Sensing (S) vs. Intuition (N): Shows how you prefer to gather and process information. </li>
-      <li> Thinking (T) vs. Feeling (F): Determines how you primarily make decisions. </li>
-      <li> Judging (J) vs. Perceiving (P): Reflects your preferred style of life management. </li>
-    </ol>
-    
-</div>
-<hr>
-<div class="section history">
-  <h2>MBTI History</h2>
-   <p>
-    The MBTI is rooted in the 1921 psychological theories of Carl Jung. <br>
-    It was developed by Katharine Cook Briggs and her daughter, Isabel Briggs Myers. <br>
-    They began creating the indicator during World War II. <br>
-    The initial goal was to help women entering the workforce find jobs where they would be "most comfortable and effective." <br>
-    The first official MBTI manual was published in 1962.
-   </p>  
-</div>
-    
+            <h3>Sentinels (Judging & Sensing)</h3>
+            <a href="#istj" class="card istj">ISTJ</a>
+            <a href="#isfj" class="card isfj">ISFJ</a>
+            <a href="#estj" class="card estj">ESTJ</a>
+            <a href="#esfj" class="card esfj">ESFJ</a>
 
-<hr>
+            <h3>Explorers (Perceiving & Sensing)</h3>
+            <a href="#istp" class="card istp">ISTP</a>
+            <a href="#isfp" class="card isfp">ISFP</a>
+            <a href="#estp" class="card estp">ESTP</a>
+            <a href="#esfp" class="card esfp">ESFP</a>
+        </div>
+        <hr />
+        <section id="intj" class="details intj-box">
+            <div class="content-box">
+                <h2>INTJ - The Architect</h2>
+                <img src="images/intj.png" alt="INTJ Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Structured study plans, conceptual mapping, focus on
+                            the "Why."
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>
+                            Death Note (Strategy, high-stakes intellectual
+                            battles).
+                        </li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            Dune by Frank Herbert (Strategy, philosophy, and
+                            future planning).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “Your mind cuts through chaos to reveal strategic
+                        solutions.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
+        <section id="intp" class="details intp-box">
+            <div class="content-box">
+                <h2>INTP - The Logician</h2>
+                <img src="images/intp.png" alt="INTP Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Focus on understanding concepts, less on
+                            memorization. Needs quiet, uninterrupted time.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>
+                            Steins;Gate (Time travel physics, eccentric genius,
+                            logical loops).
+                        </li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            The Hitchhiker’s Guide to the Galaxy by Douglas
+                            Adams (Absurd logic and dry wit).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “The world is a complex machine, and your goal is to
+                        find the fundamental laws.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
 
-    <div class="selection test">
-        <p>
-         Each person falls into one of these 16 four-letter types (e.g., ENTJ, INFP). 
-         The MBTI is extensively used for enhancing self-awareness, improving teamwork and communication in the workplace,
-          and guiding career development.
-          It emphasizes that every type is valuable and simply describes natural preferences, not skills or capability.
-         
-        </p>
-    
+        <section id="entj" class="details entj-box">
+            <div class="content-box">
+                <h2>ENTJ - The Commander</h2>
+                <img src="images/entj.png" alt="ENTJ Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Organize study groups and take the lead. Use
+                            real-world case studies to reinforce learning.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>
+                            Code Geass (Leadership, tactical warfare, changing
+                            the world).
+                        </li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            Thinking, Fast and Slow by Daniel Kahneman
+                            (Psychology of decision-making).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “Where there's a will, there's a way. Where there's no
+                        way, you create one.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
 
-    <h2>Discover Your Type</h2>
-    <p>Don't know your personality type yet? Take the official test below.</p>
-    <a href="https://www.16personalities.com/free-personality-test" target="_blank" class="test-button"> Take Test! </a>
+        <section id="entp" class="details entp-box">
+            <div class="content-box">
+                <h2>ENTP - The Debater</h2>
+                <img src="images/entp.png" alt="ENTP Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Challenge the material and debate topics. Avoid
+                            routine study methods.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>
+                            Dr. Stone (Science, invention, and improvisation).
+                        </li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            Freakonomics by Steven Levitt & Stephen Dubner
+                            (Unconventional wisdom and hidden correlations).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “The only true wisdom is in knowing you know nothing,
+                        but let's argue about it anyway.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
 
-</div>
-</div>
+        <section id="infj" class="details infj-box">
+            <div class="content-box">
+                <h2>INFJ - The Advocate</h2>
+                <img src="images/infj.png" alt="INFJ Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Connect abstract material to deeply held values.
+                            Needs quiet, focused study time.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>
+                            Monster (Deep psychological thriller, moral
+                            dilemmas).
+                        </li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            The Midnight Library by Matt Haig (Philosophical
+                            fiction about life choices).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “Nothing is so strong as gentleness, and nothing is so
+                        gentle as true strength.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
 
-</body>
+        <section id="infp" class="details infp-box">
+            <div class="content-box">
+                <h2>INFP - The Mediator</h2>
+                <img src="images/infp.png" alt="INFP Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Personalize the material and find a creative outlet
+                            for learning. Avoid rigid schedules.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>
+                            Mob Psycho 100 (Emotional growth, psychic powers,
+                            kindness).
+                        </li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            Kafka on the Shore by Haruki Murakami (Magical
+                            realism and dreamlike logic).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “In our obscurity, in this tiny corner of life, we can
+                        still do something beautiful.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
+
+        <section id="enfj" class="details enfj-box">
+            <div class="content-box">
+                <h2>ENFJ - The Protagonist</h2>
+                <img src="images/enfj.png" alt="ENFJ Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Group study and teaching others helps solidify
+                            knowledge. Breaks tasks into social goals.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>
+                            My Hero Academia (Leadership, heroism, collective
+                            growth).
+                        </li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            Becoming by Michelle Obama (Inspirational memoir,
+                            leadership).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “Your warmth builds bridges and inspires collective
+                        action.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
+
+        <section id="enfp" class="details enfp-box">
+            <div class="content-box">
+                <h2>ENFP - The Campaigner</h2>
+                <img src="images/enfp.png" alt="ENFP Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Use diverse study methods and connect concepts to
+                            exciting possibilities. Needs variety.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>Haikyuu!! (High energy, teamwork, hype).</li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            Good Omens by Terry Pratchett & Neil Gaiman (Witty,
+                            chaotic, and imaginative).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “You are a work in progress, and your greatest invention
+                        will be you.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
+
+        <section id="istj" class="details istj-box">
+            <div class="content-box">
+                <h2>ISTJ - The Logistician</h2>
+                <img src="images/istj.png" alt="ISTJ Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Highly systematic approach. Focus on facts, details,
+                            and creating detailed schedules.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>Psycho-Pass (Law, order, police procedural).</li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            Atomic Habits by James Clear (Practical
+                            self-improvement).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “If a job is worth doing, it is worth doing right, the
+                        first time.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
+
+        <section id="isfj" class="details isfj-box">
+            <div class="content-box">
+                <h2>ISFJ - The Defender</h2>
+                <img src="images/isfj.png" alt="ISFJ Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Memorization is easy with practical examples.
+                            Connect learning to helping others.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>
+                            Fruits Basket (Healing, relationships, emotional
+                            bonds)
+                        </li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            The Remains of the Day by Kazuo Ishiguro (Duty,
+                            memory, and history).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “It’s not hard to make decisions when you know what your
+                        values are.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
+
+        <section id="estj" class="details estj-box">
+            <div class="content-box">
+                <h2>ESTJ - The Executive</h2>
+                <img src="images/estj.png" alt="ESTJ Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Prefers structured environments and concrete goals.
+                            Study in a professional setting.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>
+                            Attack on Titan (Military hierarchy, high stakes,
+                            grim determination).
+                        </li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            The Art of War by Sun Tzu (Strategy and discipline).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “A leader is best when people barely know he exists.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
+
+        <section id="esfj" class="details esfj-box">
+            <div class="content-box">
+                <h2>ESFJ - The Consul</h2>
+                <img src="images/esfj.png" alt="ESFJ Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Group study is highly effective. Needs clear
+                            expectations and positive affirmation.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>
+                            Spy x Family (Found family, social dynamics,
+                            secrets).
+                        </li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            Little Women by Louisa May Alcott (Family,
+                            tradition, and personal growth).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “We are travelers on a cosmic journey, stardust swirling
+                        and dancing.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
+
+        <section id="istp" class="details istp-box">
+            <div class="content-box">
+                <h2>ISTP - The Virtuoso</h2>
+                <img src="images/istp.png" alt="ISTP Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Hands-on learning and application. Avoids
+                            theoretical debates; focus on what works.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>Cowboy Bebop (Cool, episodic, action-oriented).</li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            The Martian by Andy Weir (Survival, engineering,
+                            problem-solving).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “Don’t tell me the sky is the limit when there are
+                        footprints on the moon.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
+
+        <section id="isfp" class="details isfp-box">
+            <div class="content-box">
+                <h2>ISFP - The Adventurer</h2>
+                <img src="images/isfp.png" alt="ISFP Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Needs flexible schedule. Uses aesthetic elements
+                            (colors, drawing) in notes.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>
+                            Violet Evergarden (Beautiful animation, emotional
+                            exploration).
+                        </li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            The Alchemist by Paulo Coelho (Following one's
+                            personal legend).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “The truest expression of a people is in its dance and
+                        in its music.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
+
+        <section id="estp" class="details estp-box">
+            <div class="content-box">
+                <h2>ESTP - The Entrepreneur</h2>
+                <img src="images/estp.png" alt="ESTP Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Learn by doing and moving. Prefers interactive or
+                            physical training over lectures.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>
+                            Chainsaw Man (Fast-paced, chaotic action, visceral).
+                        </li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            Can’t Hurt Me by David Goggins (Physical and mental
+                            endurance).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">“Talk is cheap. Show me the code.”</div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
+
+        <section id="esfp" class="details esfp-box">
+            <div class="content-box">
+                <h2>ESFP - The Entertainer</h2>
+                <img src="images/esfp.png" alt="ESFP Image" />
+                <div class="info">
+                    <div class="section-title">Study Advice</div>
+                    <ul>
+                        <li>
+                            Needs engaging and stimulating material.
+                            Role-playing or acting out concepts helps.
+                        </li>
+                    </ul>
+                    <div class="section-title">Anime</div>
+                    <ul>
+                        <li>
+                            One Piece (Adventure, friendship, endless
+                            excitement).
+                        </li>
+                    </ul>
+                    <div class="section-title">Book</div>
+                    <ul>
+                        <li>
+                            Daisy Jones & The Six by Taylor Jenkins Reid
+                            (Fast-paced, interview-style,
+                            entertainment industry).
+                        </li>
+                    </ul>
+                    <div class="section-title">Quote</div>
+                    <div class="quote">
+                        “Life is a stage, and we are merely players, so make it
+                        a great show.”
+                    </div>
+                </div>
+                <a href="#quick-jump" class="top-button">Back to Cards</a>
+            </div>
+        </section>
+    </body>
 </html>
-
-<hr>
+<hr />
 <footer>
     <p>&copy; 2026 limit404.</p>
 </footer>
