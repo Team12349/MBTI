@@ -1,64 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <nav>
-        <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="advice.html">Advice</a></li>
-        <li><a href="Team.html">Our Team</a></li>
-        </ul>        
-    </nav>
-<hr>
-    <div class="container">
-    <img src="images/logo.jpg" alt="limit404 Logo" style="display:block; margin: 0 auto 20px; max-width:300px; height:auto;">
-        <h1>Limit404</h1>
-        
-        <div class="intro">
-            <p>We are a team from <strong>Zagazig University</strong>, Faculty of <strong>Science</strong>, Department of <strong>Computer Science</strong>.</p>
-            <p>limit404 is dedicated to creating innovative solutions and exploring ideas through our diverse skill sets and perspectives.</p>
-        </div>
-        
-        <div class="members">
-            <div class="member">
-                <h3>Renad Saber</h3>
-                <p class="role">Organizer</p>
-                <p class="mbti">INTJ-T</p>
-            </div>
-            
-            <div class="member">
-                <h3>Asmaa Reda</h3>
-                <p class="role">Designer</p>
-                <p class="mbti">ENFJ-A</p>
-            </div>
-            
-            <div class="member">
-                <h3>Hajar Khaled</h3>
-                <p class="role">Researcher</p>
-                <p class="mbti">ENFJ-T</p>
-            </div>
-        </div>
-    </div>
-<div class="feedback-section">
-    <h2>Send us your Feedback</h2>
-    <form class="feedback-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message">Feedback:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        
-        <button type="submit">Submit</button>
-    </form>
-</div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home Page</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="advice.html">Advice</a></li>
+                <li><a href="Team.html">Our Team</a></li>
+            </ul>
+        </nav>
+        <hr />
+        <div class="container">
+            <img
+                src="images/logo.jpg"
+                alt="limit404 Logo"
+                style="
+                    display: block;
+                    margin: 0 auto 20px;
+                    max-width: 300px;
+                    height: auto;
+                "
+            />
+            <h1>Limit404</h1>
 
+            <div class="intro">
+                <p>
+                    We are a team from <strong>Zagazig University</strong>,
+                    Faculty of <strong>Science</strong>, Department of
+                    <strong>Computer Science</strong>.
+                </p>
+                <p>
+                    limit404 is dedicated to creating innovative solutions and
+                    exploring ideas through our diverse skill sets and
+                    perspectives.
+                </p>
+            </div>
+
+            <div class="members">
+                <div class="member">
+                    <h3>Renad Saber</h3>
+                    <p class="role">Organizer</p>
+                    <p class="mbti">INTJ-T</p>
+                </div>
+
+                <div class="member">
+                    <h3>Asmaa Reda</h3>
+                    <p class="role">Designer</p>
+                    <p class="mbti">ENFJ-A</p>
+                </div>
+
+                <div class="member">
+                    <h3>Hajar Khaled</h3>
+                    <p class="role">Researcher</p>
+                    <p class="mbti">ENFJ-T</p>
+                </div>
+            </div>
+        </div>
+        <div class="feedback-section">
+            <h2>Send us your Feedback</h2>
+            <form
+                class="feedback-form"
+                action="http://localhost:3000/form"
+                method="POST"
+            >
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="message">Feedback:</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                ></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
 </html>
