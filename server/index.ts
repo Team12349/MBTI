@@ -1,14 +1,15 @@
 import express from "express";
+import bcrypt from "bcrypt";
+import sqlite from "better-sqlite3";
 const app = express();
+const db = new sqlite("database.db");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.post("/form", (req, res) => {
     const { name, email, message } = req.body;
-    console.log(
-        `Received form submission: Name: ${name}, Email: ${email}, Message: ${message}`,
-    );
+
     res.status(200).json({
         success: true,
         message: "Form submitted successfully!",
@@ -16,28 +17,33 @@ app.post("/form", (req, res) => {
     });
 });
 
-app.post("/login", (req, res) => {
-    const { username, password } = req.body;
-    console.log(`Received login attempt: Username: ${username}`);
-    if (username && password) {
+app.post("/login", async (req, res) => {
+    const { email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    if (email && password) {
         res.status(200).json({
             success: true,
             message: "Login successful!",
-            data: { username },
+            data: { email },
         });
     } else {
         res.status(400).json({
             success: false,
-            message: "Username and password are required.",
+            message: "Email and password are required.",
         });
     }
 });
 
-app.post("/register", (req, res) => {
+app.post("/register", async (req, res) => {
     const { username, email, password } = req.body;
-    console.log(
-        `Received registration attempt: Username: ${username}, Email: ${email}`,
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const stmt = db.prepare(
+        "INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
     );
+    stmt.run(username, email, hashedPassword);
+
     if (username && email && password) {
         res.status(200).json({
             success: true,

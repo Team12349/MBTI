@@ -1,14 +1,10 @@
-/* ---------------------------------------------------------------- */
-/* --- 1. General Body & Layout (Dark Theme + Universal Margin) --- */
-/* Incorporates * { margin: 5px; } for general spacing (Professor's Example) */
-/* ---------------------------------------------------------------- */
 * {
     margin: 5px;
     box-sizing: border-box; /* Ensures padding/border don't affect width/height */
 }
 
 body {
-    background: #2f2f2f; /* Friend's Dark Background */
+    background: #2f2f2f;
     font-family: Arial, sans-serif;
     color: #fff;
     text-align: center;
@@ -17,7 +13,27 @@ body {
 
 h1 {
     padding-top: 20px;
-    color: #00ff9d; /* Bright Accent Color */
+    color: #00ff9d;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginBtn {
+    background-color: #00ff9d;
+    color: #2f2f2f;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid #00ff9d;
+    cursor: pointer;
+}
+
+#auth-buttons {
+    display: flex;
 }
 
 /* Center Content */
@@ -29,15 +45,16 @@ section {
     padding: 10px 0;
 }
 
-/* ---------------------------------------------------------------- */
-/* --- 2. Universal Navigation Bar (Kept Simple) --- */
-/* ---------------------------------------------------------------- */
 nav {
     background-color: #444;
     padding: 10px 0;
+    width: 100%;
 }
 
 nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
     padding: 0;
     margin: 0;
