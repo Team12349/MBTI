@@ -22,10 +22,10 @@
         <h1>Get Started</h1>
         <p>Welcome to MBTI - Let`s get started</p>
 
-        <form id="form" action="index.html" method="">
+        <form id="form" action="http://localhost:3000/register" method="POST">
             <div>
                 <label for="name">Full Name</label>
-                <input type="text" id="name" name="full-name" placeholder="Enter Full Name">
+                <input type="text" id="name" name="username" placeholder="Enter Full Name">
                 <small class="error"></small>
             </div>
 
@@ -42,7 +42,7 @@
             </div>
 
             
-            <input type="submit" value="Sign up">
+            <button type="submit">Sign up</button>
 
         </form>
 
@@ -79,6 +79,7 @@
             </div>
         </footer>
 
-        <script src="script.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/signup.js"></script>
 </body>
 </html>

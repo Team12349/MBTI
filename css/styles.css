@@ -526,7 +526,7 @@ nav .login:hover {
     box-shadow: 0 0 8px #874bd133;
 }
 
-.sign-up input[type="submit"] {
+.sign-up button[type="submit"] {
     width: 100%;
     height: 55px;
     border: none;
@@ -539,7 +539,7 @@ nav .login:hover {
     transition: 0.3s;
 }
 
-.sign-up input[type="submit"]:hover {
+.sign-up button[type="submit"]:hover {
     background-color: white;
     color: #9751b9;;
     border: 1px solid #9751b9;;
@@ -675,7 +675,7 @@ nav .login:hover {
     box-shadow: 0 0 8px #8dd3eea8;
 }
 
-.log-in input[type="submit"] {
+.log-in button[type="submit"] {
     width: 100%;
     height: 55px;
     border: none;
@@ -688,7 +688,7 @@ nav .login:hover {
     transition: 0.3s;
 }
 
-.log-in input[type="submit"]:hover {
+.log-in button[type="submit"]:hover {
     background-color: white;
     color: #57ccfa;
     border: 1px solid #57ccfa;
