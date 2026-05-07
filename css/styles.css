@@ -48,17 +48,13 @@ section {
 nav {
     display: flex;
     background-color: #444;
-<<<<<<< HEAD:css/styles.css
     padding: 10px 20px;
 }
 
 nav p {
     color: #00ff9d;
     font-size: 32px;
-=======
-    padding: 10px 0;
-    width: 100%;
->>>>>>> 8a48d63b27f0f461f69b9380b49556593e0a1460:styles.css
+
 }
 
 nav ul {
