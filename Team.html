@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>MBTI</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="advice.html">Advice</a></li>
-        <li><a href="Team.html">Our Team</a></li>
-        </ul>        
+    <nav id="nav">
+        <p>MBTI</p>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="advice.html">Advice</a></li>
+            <li><a href="Team.html" class="active">Our Team</a></li>
+            </ul>     
+        
+        <div>
+            <i class="fa-solid fa-universal-access"></i>
+            <i class="fa-solid fa-earth-americas"></i>
+            <a href="login.html" class="login">Log in</a>
+        </div>
     </nav>
 <hr>
     <div class="container">
@@ -42,6 +50,21 @@
                 <p class="role">Researcher</p>
                 <p class="mbti">ENFJ-T</p>
             </div>
+            <div class="member">
+                <h3>Nouran Wael</h3>
+                <p class="role">Designer</p>
+                <p class="mbti">ENFJ-T</p>
+            </div>
+            <div class="member">
+                <h3>Mohamed Sayed</h3>
+                <p class="role">Developer</p>
+                <p class="mbti">ENFJ-T</p>
+            </div>
+            <div class="member">
+                <h3>Zena Ahmed</h3>
+                <p class="role">Developer</p>
+                <p class="mbti">ENFJ-T</p>
+            </div>
         </div>
     </div>
 <div class="feedback-section">
@@ -59,6 +82,21 @@
         <button type="submit">Submit</button>
     </form>
 </div>
+ <hr>
+         <footer>
+            <a href="#nav">MBTI</a>
+            <span>&copy; 2026 limit404.</span>
+        
+            <div class="footer-links">
+                <ul>
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-twitter"></i></li>
+                </ul>
+                <span>Support:imit404@gmail.com</span>
+            </div>
+        </footer>
+        
+        <script src="script.js"></script>
 </body>
-
 </html>
