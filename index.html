@@ -6,29 +6,32 @@
         <title>MBTI</title>
         <link rel="stylesheet" href="css/all.css">
         <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/header.css" />
         <link rel="icon" href="favicon.svg">
     </head>
 
     <body>
 
-        <nav id="nav">
+    <div class="header">
+        <a href="index.html" class="brand">
+            <img src="favicon.svg" alt="MBTI Logo" class="logo">
             <p>MBTI</p>
-            <ul class="navbar">
+        </a>
+
+        <div class="header-list">
+            <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="advice.html">Advice</a></li>
                 <li><a href="team.html">Our Team</a></li>
             </ul>
-            <div>
-                <i class="fa-solid fa-universal-access"></i>
-                <i class="fa-solid fa-earth-americas"></i>
-                <a href="login.html" class="login">Log in</a>
-                <a href="signup.html" class="login">Sign up</a>
-            </div>
-        </nav>
+        </div>
 
-      
+        <div class="auth-buttons">
+            <a href="login.html" class="login">Log in</a>
+            <a href="signup.html" class="login">Sign up</a>
+        </div>
+    </div>
 
-        <hr />
         <h1>MBTI Advice</h1>
         <p>Click on your personality type below for more info!</p>
 
