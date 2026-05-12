@@ -321,6 +321,18 @@ nav .login:hover {
     border-radius: 8px;
     background-color: #f9f9f9;
 }
+
+.members a {
+    text-decoration: none;
+    margin: 0px;
+}
+
+.member img {
+    width:120px;
+    height:auto;
+    margin-top:10px;
+}
+
 .member h3 {
     margin-top: 0;
     color: #333;
