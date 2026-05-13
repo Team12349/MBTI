@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/all.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/form.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="icon" href="favicon.svg" />
   </head>
@@ -94,18 +95,27 @@
     </div>
     <div class="feedback-section">
       <h2>Send us your Feedback</h2>
-      <form class="feedback-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="message">Feedback:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit">Submit</button>
+      <form id="feedback-form" novalidate>
+        <div class="form-item">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <small class="error"></small>
+        </div>
+        <div class="form-item">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <small class="error"></small>
+        </div>
+        <div class="form-item">
+          <label for="message">Feedback:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <small class="error"></small>
+        </div>
+        <button type="submit" id="submitBtn">Submit</button>
       </form>
+
+      <span id="form-response" class="hidden"></span>
     </div>
     <footer>
       <a href="index.html">MBTI</a>
@@ -114,7 +124,7 @@
       <div class="footer-links">
         <div class="social-media">
           <span class="social-media-title">Github</span>
-          <a href="https://github.com/limit404" target="_blank">
+          <a href="https://github.com/Team12349/MBTI" target="_blank">
             <i class="fa-brands fa-github"></i>
           </a>
         </div>
@@ -135,6 +145,6 @@
       </div>
     </footer>
 
-    <script src="js/"></script>
+    <script src="js/form.js"></script>
   </body>
 </html>

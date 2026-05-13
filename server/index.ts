@@ -1,9 +1,14 @@
 import express from "express";
 import bcrypt from "bcrypt";
 import sqlite from "better-sqlite3";
+import cors from "cors";
+import path from "path";
 const app = express();
-const db = new sqlite("database.db");
 
+const dbPath = path.join(__dirname, "..", "database.db");
+const db = new sqlite(dbPath);
+
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -23,6 +28,7 @@ function checkPassword(inputPassword: string, storedHash: string) {
 
 app.post("/form", (req, res) => {
   const { name, email, message } = req.body;
+  console.log("Form Data:", { name, email, message });
   if (!name || !email || !message) {
     return res.status(400).json({
       success: false,
