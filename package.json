@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node server/dist/index.js",
-    "dev": "tsc && nodemon server/dist/index.js",
+    "start": "tsc -p server && node server/dist/index.js",
+    "dev": "tsc -p server && nodemon server/dist/index.js",
     "prettier": "prettier --write .",
     "build": "tsc",
     "prepare": "husky"
