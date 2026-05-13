@@ -1,11 +1,10 @@
 let links = document.querySelectorAll(".navbar a");
 
-links.forEach(link => {
+links.forEach((link) => {
   if (link.href === window.location.href) {
     link.classList.add("active");
   }
 });
-
 
 // const form = document.getElementById("form");
 // const nameInput = document.getElementById("name");
@@ -30,11 +29,9 @@ links.forEach(link => {
 //     let emailValue = emailInput.value.trim();
 //     let passwordValue = passwordInput.value.trim();
 
-
 // if (nameInput) {
 
 //     let nameValue = nameInput.value.trim();
-
 
 //     if (nameValue === "") {
 //         setError(nameInput, "Name is required");
@@ -49,8 +46,6 @@ links.forEach(link => {
 //     }
 // }
 
-
-
 //     if (emailValue === "") {
 //         setError(emailInput, "Email is required");
 //         valid = false;
@@ -63,8 +58,6 @@ links.forEach(link => {
 //         setSuccess(emailInput);
 //     }
 
-
-
 //     if (passwordValue === "") {
 //         setError(passwordInput, "Password is required");
 //         valid = false;
@@ -76,7 +69,7 @@ links.forEach(link => {
 //     } else {
 //         setSuccess(passwordInput);
 //     }
-    
+
 //         return valid;
 
 // }
@@ -96,7 +89,6 @@ links.forEach(link => {
 //     input.classList.remove("error-border");
 //     small.innerText = "";
 // }
-
 
 // function validateEmail(email) {
 //     let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
