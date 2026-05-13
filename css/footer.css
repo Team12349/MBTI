@@ -8,6 +8,12 @@ footer {
   border-top: 2px solid gray;
 }
 
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 footer a {
   font-size: 32px;
   color: white;
