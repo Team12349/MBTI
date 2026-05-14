@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc -p server && node server/dist/index.js",
+    "build": "tsc -p server",
     "dev": "tsc -p server && nodemon server/dist/index.js",
+    "start:server": "tsc -p server && node server/dist/index.js",
+    "start:client": "live-server ./frontend",
     "prettier": "prettier --write .",
-    "build": "tsc",
     "prepare": "husky"
   },
   "keywords": [],
