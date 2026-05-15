@@ -17,6 +17,7 @@ form.addEventListener("submit", async function (e) {
   try {
     const res = await fetch("http://localhost:3000/register", {
       method: "POST",
+      credentials: "include",
       body: JSON.stringify({
         username: document.getElementById("name").value,
         email: document.getElementById("email").value,

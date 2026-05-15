@@ -3,6 +3,8 @@ import bcrypt from "bcrypt";
 import sqlite from "better-sqlite3";
 import cors from "cors";
 import path from "path";
+import jwt from "jsonwebtoken";
+import cookieParser from "cookie-parser";
 const app = express();
 
 const dbPath = path.join(__dirname, "..", "database.db");
@@ -11,6 +13,7 @@ const db = new sqlite(dbPath);
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 function saveUser(user: { username: string; email: string; password: string }) {
   const stmt = db.prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
@@ -19,16 +22,24 @@ function saveUser(user: { username: string; email: string; password: string }) {
 
 function getUser(email: string) {
   const stmt = db.prepare("SELECT * FROM users WHERE email = ?");
-  return stmt.get(email) as { username: string; email: string; password: string } | undefined;
+  return stmt.get(email) as { username: string; email: string; password: string; id: number } | undefined;
 }
 
 function checkPassword(inputPassword: string, storedHash: string) {
   return bcrypt.compare(inputPassword, storedHash);
 }
 
+function generateToken(user: { id: number; email: string; username: string }) {
+  if (!process.env.SECRET_KEY) {
+    throw new Error("SECRET_KEY is not defined in environment variables.");
+  }
+  return jwt.sign({ id: user.id, email: user.email, username: user.username }, process.env.SECRET_KEY, {
+    expiresIn: "1h",
+  });
+}
+
 app.post("/form", (req, res) => {
   const { name, email, message } = req.body;
-  console.log("Form Data:", { name, email, message });
   if (!name || !email || !message) {
     return res.status(400).json({
       success: false,
@@ -50,7 +61,8 @@ app.post("/login", async (req, res) => {
     if (!email || !password) {
       throw new Error("Email and password are required.");
     }
-    const user = getUser(email);
+    const trimmedEmail = email.trim().toLowerCase();
+    const user = getUser(trimmedEmail);
     if (!user) {
       throw new Error("Invalid Email or Password");
     }
@@ -60,10 +72,15 @@ app.post("/login", async (req, res) => {
       throw new Error("Invalid Email or Password");
     }
 
+    const token = generateToken({ id: user.id, email: user.email, username: user.username });
+    res.cookie("session", token, {
+      httpOnly: true,
+    });
+
     res.status(200).json({
       success: true,
       message: "Login successful!",
-      data: { email },
+      data: { email: user.email, username: user.username },
     });
   } catch (error) {
     res.status(400).json({
@@ -76,7 +93,6 @@ app.post("/login", async (req, res) => {
 app.post("/register", async (req, res) => {
   try {
     const { username, email, password } = req.body;
-    console.log("Registration Data:", { username, email, password });
 
     if (!username || !email || !password) {
       throw new Error("Username, email, and password are required.");
@@ -86,18 +102,27 @@ app.post("/register", async (req, res) => {
       throw new Error("Password must be at least 6 characters long.");
     }
 
-    const existingUser = getUser(email);
+    const trimmedEmail = email.trim().toLowerCase();
+
+    const existingUser = getUser(trimmedEmail);
     if (existingUser) {
       throw new Error("Email is already registered.");
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    saveUser({ username, email, password: hashedPassword });
+    saveUser({ username, email: trimmedEmail, password: hashedPassword });
+
+    const newUser = getUser(trimmedEmail)!;
+
+    const token = generateToken({ id: newUser.id, email: trimmedEmail, username });
+    res.cookie("session", token, {
+      httpOnly: true,
+    });
 
     res.status(200).json({
       success: true,
       message: "Registration successful!",
-      data: { username, email },
+      data: { username, email: trimmedEmail },
     });
   } catch (error) {
     res.status(400).json({
@@ -105,6 +130,46 @@ app.post("/register", async (req, res) => {
       message: error instanceof Error ? error.message : "An error occurred.",
     });
   }
+});
+
+app.get("/me", (req, res) => {
+  try {
+    const token = req.cookies.session;
+
+    if (!token) {
+      return res.status(401).json({
+        success: false,
+        message: "Unauthorized",
+      });
+    }
+
+    if (!process.env.SECRET_KEY) {
+      throw new Error("SECRET_KEY is not defined in environment variables.");
+    }
+    const payload = jwt.verify(token, process.env.SECRET_KEY) as { id: string; email: string; username: string };
+
+    res.json({
+      success: true,
+      user: {
+        id: payload.id,
+        email: payload.email,
+        username: payload.username,
+      },
+    });
+  } catch {
+    return res.status(401).json({
+      success: false,
+      message: "Invalid token",
+    });
+  }
+});
+
+app.use("/logout", (req, res) => {
+  res.clearCookie("session");
+  res.status(200).json({
+    success: true,
+    message: "Logged out successfully",
+  });
 });
 
 app.use("/", (req, res) => {
