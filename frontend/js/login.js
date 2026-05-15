@@ -1,65 +1,52 @@
+import { validateLogin } from "./validate";
+
 const form = document.getElementById("form");
+const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 
-if (form) {
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
 
-    let isValid = validateInputs();
+  let isValid = validateLogin();
+  if (!isValid) return;
 
-    if (isValid) {
-      window.location.href = "index.html";
+  const el = document.querySelector("#submitBtn");
+
+  let message = "";
+  try {
+    const res = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!res.ok) {
+      const data = await res.json();
+      message = data.message || "Failed to sign up.";
+    } else {
+      message = "Sign up successful!";
+      form.reset();
     }
-  });
-}
-
-function validateInputs() {
-  let valid = true;
-
-  let emailValue = emailInput.value.trim();
-  let passwordValue = passwordInput.value.trim();
-
-  if (emailValue === "") {
-    setError(emailInput, "Email is required");
-    valid = false;
-  } else if (!validateEmail(emailValue)) {
-    setError(emailInput, "Invalid email");
-    valid = false;
-  } else {
-    setSuccess(emailInput);
+  } catch (err) {
+    console.error("Error submitting form", err);
+    message = "Server connection failed.";
   }
 
-  if (passwordValue === "") {
-    setError(passwordInput, "Password is required");
-    valid = false;
-  } else if (passwordValue.length < 6) {
-    setError(passwordInput, "Password must be at least 6 characters");
-    valid = false;
-  } else {
-    setSuccess(passwordInput);
-  }
+  if (!el) return;
 
-  return valid;
-}
+  el.textContent = message;
+  el.disabled = true;
+  el.style.cursor = "not-allowed";
 
-function setError(input, message) {
-  const parent = input.parentElement;
-  const small = parent.querySelector("small");
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
-  input.classList.add("error-border");
-  small.innerText = message;
-}
-
-function setSuccess(input) {
-  const parent = input.parentElement;
-  const small = parent.querySelector("small");
-
-  input.classList.remove("error-border");
-  small.innerText = "";
-}
-
-function validateEmail(email) {
-  let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-  return pattern.test(email);
-}
+  el.style.cursor = "pointer";
+  el.disabled = false;
+  el.textContent = "Sign up";
+});

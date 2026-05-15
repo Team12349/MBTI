@@ -76,6 +76,7 @@ app.post("/login", async (req, res) => {
 app.post("/register", async (req, res) => {
   try {
     const { username, email, password } = req.body;
+    console.log("Registration Data:", { username, email, password });
 
     if (!username || !email || !password) {
       throw new Error("Username, email, and password are required.");
