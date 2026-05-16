@@ -1,17 +1,18 @@
 .feedback-section {
-  background: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 600px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  background: #252525;
+  border: 1px solid #00ff9d2e;
+  border-radius: 24px;
+  padding: 28px;
+  margin: 32px auto 48px;
+  max-width: 680px;
 }
 
 .feedback-section h2 {
-  color: #3f51b5;
+  color: #00ff9d;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 22px;
+  letter-spacing: 1.28px;
 }
 
 #feedback-form {
@@ -20,19 +21,22 @@
 }
 
 #feedback-form label {
-  color: #333;
+  color: #d8d8d8;
   font-weight: bold;
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  text-align: left;
 }
 
 #feedback-form input,
 #feedback-form textarea {
-  padding: 8px;
-  border: 2px solid #ddd;
-  border-radius: 5px;
+  padding: 12px 14px;
+  border: 1px solid #555;
+  border-radius: 12px;
+  background: #333;
+  color: white;
   font-family: Arial, sans-serif;
-  font-size: 1em;
+  font-size: 16px;
 }
 
 #feedback-form input:focus,
@@ -42,18 +46,18 @@
 }
 
 #feedback-form button {
-  margin-top: 15px;
-  padding: 10px;
+  margin-top: 18px;
+  padding: 13px;
   background-color: #00ff9d;
   color: #2f2f2f;
   border: none;
-  border-radius: 5px;
+  border-radius: 14px;
   font-weight: bold;
   cursor: pointer;
 }
 
 #feedback-form button:hover {
-  background-color: #c1e2ce;
+  background-color: #f4ff61;
 }
 
 #form-response {

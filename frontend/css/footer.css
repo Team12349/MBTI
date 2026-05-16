@@ -50,7 +50,7 @@ footer a {
 .social-media-title {
   font-size: 15px;
   font-weight: bold;
-  color: rgb(245, 199, 199);
+  color: #f5c7c7;
 }
 
 .footer-links ul li a {
@@ -77,9 +77,6 @@ footer i {
   display: block;
   width: 28px;
   height: 28px;
-  background-color: currentColor;
-  mask: url("../images/github.svg") center / contain no-repeat;
-  -webkit-mask: url("../images/github.svg") center / contain no-repeat;
 }
 
 footer i:hover {
