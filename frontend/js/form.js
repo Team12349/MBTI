@@ -13,7 +13,7 @@ form.addEventListener("submit", async function (e) {
 
   let message = "";
   try {
-    const res = await fetch("http://localhost:3000/form", {
+    const res = await fetch("/form", {
       method: "POST",
       body: JSON.stringify({
         name: document.getElementById("name").value.trim(),

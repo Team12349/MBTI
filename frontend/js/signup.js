@@ -13,7 +13,7 @@ form.addEventListener("submit", async function (e) {
   if (!isValid) return;
 
   try {
-    const res = await fetch(`http://localhost:3000/register`, {
+    const res = await fetch("/register", {
       method: "POST",
       credentials: "include",
       body: JSON.stringify({

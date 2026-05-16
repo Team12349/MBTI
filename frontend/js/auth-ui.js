@@ -77,7 +77,7 @@ async function updateAuthButtons() {
   removeLoginButtons();
 
   try {
-    const res = await fetch("http://localhost:3000/me", {
+    const res = await fetch("/me", {
       credentials: "include",
     });
 
@@ -104,7 +104,7 @@ async function deleteAccount() {
   if (!confirmed) return;
 
   try {
-    const res = await fetch("http://localhost:3000/me", {
+    const res = await fetch("/me", {
       method: "DELETE",
       credentials: "include",
     });
@@ -124,7 +124,7 @@ async function logout(e) {
   e.preventDefault();
 
   try {
-    const res = await fetch("http://localhost:3000/logout", {
+    const res = await fetch("/logout", {
       method: "POST",
       credentials: "include",
     });

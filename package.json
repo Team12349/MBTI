@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p server",
+    "typecheck": "tsc -p server --noEmit",
     "dev": "tsc -p server && nodemon server/dist/index.js",
+    "start": "node server/dist/index.js",
     "start:server": "tsc -p server && node server/dist/index.js",
     "start:client": "live-server --host=localhost --port=5500 ./frontend",
+    "lint": "prettier --check .",
     "prettier": "prettier --write .",
     "prepare": "husky"
   },
@@ -15,6 +18,9 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "engines": {
+    "node": ">=20.17"
+  },
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
     "@types/better-sqlite3": "^7.6.13",

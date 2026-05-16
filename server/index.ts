@@ -4,6 +4,7 @@ import cors from "cors";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
+import path from "path";
 import { saveUser, saveFeedback, getUser, deleteUser, checkPassword, generateToken } from "./utils";
 
 dotenv.config({ path: "server/.env" });
@@ -18,6 +19,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "..", "..", "frontend")));
 
 app.post("/form", (req, res) => {
   const { name, email, message } = req.body;

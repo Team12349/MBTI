@@ -12,7 +12,7 @@ form.addEventListener("submit", async function (e) {
   if (!isValid) return;
 
   try {
-    const res = await fetch(`http://localhost:3000/login`, {
+    const res = await fetch("/login", {
       method: "POST",
       credentials: "include",
       body: JSON.stringify({

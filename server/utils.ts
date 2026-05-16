@@ -1,10 +1,34 @@
 import path from "path";
+import fs from "fs";
 import sqlite from "better-sqlite3";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const dbPath = path.join(__dirname, "..", "database.db");
+const dbPath = process.env.DATABASE_PATH || path.join(__dirname, "..", "database.db");
+const dbDir = path.dirname(dbPath);
+
+if (!fs.existsSync(dbDir)) {
+  fs.mkdirSync(dbDir, { recursive: true });
+}
+
 const db = new sqlite(dbPath);
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL
+  );
+
+  CREATE TABLE IF NOT EXISTS feedback (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    message TEXT NOT NULL,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+  );
+`);
 
 export function saveUser(user: { username: string; email: string; password: string }) {
   const stmt = db.prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
