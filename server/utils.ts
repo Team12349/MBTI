@@ -43,10 +43,6 @@ export function deleteUser(id: number) {
   return stmt.run(id);
 }
 
-export function checkPassword(inputPassword: string, storedHash: string) {
-  return bcrypt.compare(inputPassword, storedHash);
-}
-
 export function generateToken(user: { id: number; email: string; username: string }) {
   if (!process.env.SECRET_KEY) {
     throw new Error("SECRET_KEY is not defined in environment variables.");
@@ -54,4 +50,12 @@ export function generateToken(user: { id: number; email: string; username: strin
   return jwt.sign({ id: user.id, email: user.email, username: user.username }, process.env.SECRET_KEY, {
     expiresIn: "1h",
   });
+}
+
+export function checkPassword(inputPassword: string, storedHash: string) {
+  return bcrypt.compare(inputPassword, storedHash);
+}
+
+export function hashPassword(password: string) {
+  return bcrypt.hash(password, 10);
 }

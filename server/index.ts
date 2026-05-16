@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import path from "path";
-import { saveUser, saveFeedback, getUser, deleteUser, checkPassword, generateToken } from "./utils";
+import { saveUser, saveFeedback, getUser, deleteUser, checkPassword, generateToken, hashPassword } from "./utils";
 
 dotenv.config({ path: "server/.env" });
 const app = express();
@@ -89,7 +89,7 @@ app.post("/register", async (req, res) => {
       throw new Error("Email is already registered.");
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await hashPassword(password);
     saveUser({ username, email, password: hashedPassword });
 
     const newUser = getUser(email)!;
