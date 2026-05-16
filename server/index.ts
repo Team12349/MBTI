@@ -29,6 +29,11 @@ function saveUser(user: { username: string; email: string; password: string }) {
   stmt.run(user.username, user.email, user.password);
 }
 
+function saveFeedback(feedback: { name: string; email: string; message: string }) {
+  const stmt = db.prepare("INSERT INTO feedback (name, email, message) VALUES (?, ?, ?)");
+  stmt.run(feedback.name, feedback.email, feedback.message);
+}
+
 function getUser(email: string) {
   const stmt = db.prepare("SELECT * FROM users WHERE email = ?");
   return stmt.get(email) as { username: string; email: string; password: string; id: number } | undefined;
@@ -60,6 +65,8 @@ app.post("/form", (req, res) => {
       message: "Name, email, and message are required.",
     });
   }
+
+  saveFeedback({ name, email, message });
 
   res.status(200).json({
     success: true,
