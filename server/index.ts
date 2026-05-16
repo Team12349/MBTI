@@ -75,8 +75,7 @@ app.post("/login", async (req, res) => {
     if (!email || !password) {
       throw new Error("Email and password are required.");
     }
-    const trimmedEmail = email.trim().toLowerCase();
-    const user = getUser(trimmedEmail);
+    const user = getUser(email);
     if (!user) {
       throw new Error("Invalid Email or Password");
     }
@@ -114,25 +113,23 @@ app.post("/register", async (req, res) => {
       throw new Error("Password must be at least 6 characters long.");
     }
 
-    const trimmedEmail = email.trim().toLowerCase();
-
-    const existingUser = getUser(trimmedEmail);
+    const existingUser = getUser(email);
     if (existingUser) {
       throw new Error("Email is already registered.");
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    saveUser({ username, email: trimmedEmail, password: hashedPassword });
+    saveUser({ username, email, password: hashedPassword });
 
-    const newUser = getUser(trimmedEmail)!;
+    const newUser = getUser(email)!;
 
-    const token = generateToken({ id: newUser.id, email: trimmedEmail, username });
+    const token = generateToken({ id: newUser.id, email, username });
     res.cookie("session", token, { httpOnly: true });
 
     res.status(200).json({
       success: true,
       message: "Registration successful!",
-      data: { username, email: trimmedEmail },
+      data: { username, email },
     });
   } catch (error) {
     res.status(400).json({

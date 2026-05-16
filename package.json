@@ -7,7 +7,7 @@
     "build": "tsc -p server",
     "dev": "tsc -p server && nodemon server/dist/index.js",
     "start:server": "tsc -p server && node server/dist/index.js",
-    "start:client": "live-server ./frontend",
+    "start:client": "live-server --host=localhost --port=5500 ./frontend",
     "prettier": "prettier --write .",
     "prepare": "husky"
   },

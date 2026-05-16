@@ -26,9 +26,9 @@ form.addEventListener("submit", async function (e) {
     const res = await fetch(`${apiOrigin}/form`, {
       method: "POST",
       body: JSON.stringify({
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value,
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim().toLowerCase(),
+        message: document.getElementById("message").value.trim(),
       }),
       headers: {
         "Content-Type": "application/json",

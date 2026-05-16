@@ -17,9 +17,9 @@ form.addEventListener("submit", async function (e) {
       method: "POST",
       credentials: "include",
       body: JSON.stringify({
-        username: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value,
+        username: nameInput.value.trim(),
+        email: emailInput.value.trim().toLowerCase(),
+        password: passwordInput.value.trim(),
       }),
       headers: {
         "Content-Type": "application/json",
