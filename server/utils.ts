@@ -1,16 +1,9 @@
 import path from "path";
-import fs from "fs";
 import sqlite from "better-sqlite3";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const dbPath = process.env.DATABASE_PATH || path.join(__dirname, "..", "database.db");
-const dbDir = path.dirname(dbPath);
-
-if (!fs.existsSync(dbDir)) {
-  fs.mkdirSync(dbDir, { recursive: true });
-}
-
+const dbPath = process.env.DATABASE_PATH ?? path.join(__dirname, "database.db");
 const db = new sqlite(dbPath);
 
 db.exec(`
