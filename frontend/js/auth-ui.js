@@ -1,7 +1,5 @@
 const loginBtn = document.getElementById("loginBtn");
 const signupBtn = document.getElementById("signupBtn");
-const apiOrigin = `http://${window.location.hostname}:3000`;
-const authPages = new Set(["login.html", "signup.html"]);
 let profileButton;
 let profilePopup;
 
@@ -79,7 +77,7 @@ async function updateAuthButtons() {
   removeLoginButtons();
 
   try {
-    const res = await fetch(`${apiOrigin}/me`, {
+    const res = await fetch("http://localhost:3000/me", {
       credentials: "include",
     });
 
@@ -106,7 +104,7 @@ async function deleteAccount() {
   if (!confirmed) return;
 
   try {
-    const res = await fetch(`${apiOrigin}/me`, {
+    const res = await fetch("http://localhost:3000/me", {
       method: "DELETE",
       credentials: "include",
     });
@@ -126,7 +124,7 @@ async function logout(e) {
   e.preventDefault();
 
   try {
-    const res = await fetch(`${apiOrigin}/logout`, {
+    const res = await fetch("http://localhost:3000/logout", {
       method: "POST",
       credentials: "include",
     });

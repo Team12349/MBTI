@@ -1,15 +1,5 @@
 import { validateForm } from "./validate.js";
 
-const apiOrigin = `http://${window.location.hostname}:3000`;
-
-let links = document.querySelectorAll(".navbar a");
-
-links.forEach((link) => {
-  if (link.href === window.location.href) {
-    link.classList.add("active");
-  }
-});
-
 const form = document.getElementById("feedback-form");
 
 form.addEventListener("submit", async function (e) {
@@ -23,7 +13,7 @@ form.addEventListener("submit", async function (e) {
 
   let message = "";
   try {
-    const res = await fetch(`${apiOrigin}/form`, {
+    const res = await fetch("http://localhost:3000/form", {
       method: "POST",
       body: JSON.stringify({
         name: document.getElementById("name").value.trim(),
@@ -36,7 +26,7 @@ form.addEventListener("submit", async function (e) {
     });
 
     if (!res.ok) {
-      message = "Failed to submit feedback.";
+      throw new Error("Failed to submit form.");
     } else {
       message = "Thank you for your feedback!";
       form.reset();
