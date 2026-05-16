@@ -3,7 +3,7 @@ import sqlite from "better-sqlite3";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const dbPath = process.env.DATABASE_PATH ?? path.join(__dirname, "database.db");
+const dbPath = process.env.DATABASE_PATH ?? path.join(process.cwd(), "server", "database.db");
 const db = new sqlite(dbPath);
 
 db.exec(`

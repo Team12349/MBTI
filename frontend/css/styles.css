@@ -84,6 +84,67 @@ hr {
   margin: 0 15%;
 }
 
+.preference-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 26px;
+  text-align: left;
+}
+
+.preference-card {
+  padding: 22px;
+  border: 1px solid #00ff9d55;
+  border-radius: 20px;
+  background: #252535;
+  text-align: center;
+}
+
+.preference-card:hover {
+  border-color: #00ff9d;
+}
+
+.preference-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: #f4ff61;
+  font-weight: 800;
+}
+
+.preference-pair span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.preference-pair strong {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #00ff9d;
+  color: #252535;
+  font-size: 16px;
+}
+
+.preference-pair em {
+  color: #57ccfa;
+  font-size: 13px;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.preference-card p {
+  margin: 0;
+  color: #eeeeee;
+  line-height: 26px;
+}
+
 /* Center Content */
 #quick-jump,
 section {
