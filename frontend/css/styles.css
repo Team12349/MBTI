@@ -25,9 +25,8 @@ h1 {
 }
 
 .home-hero {
-  width: 90%;
-  max-width: 980px;
-  margin: 44px auto 28px;
+  width: 70%;
+  margin: 44px 15% 28px;
   padding: 44px 34px;
   border: 2px solid #00ff9d;
   border-radius: 26px;
@@ -54,7 +53,7 @@ h1 {
 
 .home-hero p {
   max-width: 680px;
-  margin: 18px auto 0;
+  margin: 18px 0 0;
   color: #eeeeee;
   font-size: 20px;
   line-height: 30px;
@@ -79,19 +78,17 @@ h1 {
 }
 
 hr {
-  width: 90%;
-  max-width: 980px;
+  width: 70%;
   border: 0;
   border-top: 1px solid #555;
-  margin: 0 auto;
+  margin: 0 15%;
 }
 
 /* Center Content */
 #quick-jump,
 section {
-  width: 90%;
-  max-width: 900px;
-  margin: 20px auto;
+  width: 70%;
+  margin: 20px 15%;
   padding: 10px 0;
 }
 
@@ -113,7 +110,7 @@ nav ul {
   list-style: none;
   padding: 0;
   text-align: center;
-  margin: auto;
+  margin: 0;
 }
 
 nav ul li {
@@ -140,7 +137,7 @@ nav .login {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  margin: auto 0 auto 10px;
+  margin: 0 0 0 10px;
 }
 
 nav .login:hover {
@@ -152,17 +149,15 @@ nav .login:hover {
 }
 
 .advice-hero {
-  width: 90%;
-  max-width: 900px;
-  margin: 44px auto 20px;
-  padding: 34px;
-  border: 2px solid #00ff9d;
-  border-radius: 24px;
-  background: #252535;
+  width: 70%;
+  margin: 36px 15% 22px;
+  padding: 10px 0;
+  text-align: center;
 }
 
 .advice-label {
-  margin: 0 0 10px;
+  display: inline-block;
+  margin: 0 0 14px;
   color: #57ccfa;
   font-size: 15px;
   font-weight: 800;
@@ -174,50 +169,87 @@ nav .login:hover {
   margin: 0 0 14px;
   padding: 0;
   color: #f4ff61;
-  font-size: 48px;
+  font-size: 42px;
 }
 
 .advice-hero p {
   max-width: 680px;
-  margin: 0 auto;
+  margin: 0;
   color: #e8e8e8;
   font-size: 18px;
   line-height: 28px;
 }
 
 #quick-jump {
-  width: 90%;
-  max-width: 980px;
+  width: 70%;
   text-align: center;
-  padding: 28px;
+  padding: 34px;
   border: 1px solid #555;
   border-radius: 24px;
   background: #242424;
 }
 
+#quick-jump h2 {
+  margin: 0 0 8px;
+  color: #f4ff61;
+  font-size: 34px;
+}
+
+.quick-jump-intro {
+  margin: 0 0 24px;
+  color: #dddddd;
+  font-size: 17px;
+}
+
+.type-group {
+  display: inline-block;
+  width: 45%;
+  margin-top: 22px;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 20px;
+  border: 1px solid #444;
+  border-radius: 18px;
+  background: #2f2f2f;
+  vertical-align: top;
+}
+
 #quick-jump h3 {
-  margin: 28px 0 14px;
+  margin: 0 0 8px;
   color: #00ff9d;
   font-size: 20px;
   text-transform: uppercase;
 }
 
-#quick-jump h3:first-child {
-  margin-top: 0;
+#quick-jump .type-group p {
+  margin: 0 0 14px;
+  color: #cccccc;
+  font-size: 15px;
 }
 
 .card {
   display: inline-block;
-  width: 120px;
-  height: 58px;
-  line-height: 58px;
+  width: 150px;
+  min-height: 100px;
   margin: 8px;
+  padding: 12px 8px;
   border: 2px solid #2f2f2f;
   border-radius: 14px;
   cursor: pointer;
   text-decoration: none;
+  vertical-align: top;
+}
+
+.card strong {
+  display: block;
+  font-size: 22px;
+}
+
+.card span {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
   font-weight: bold;
-  font-size: 20px;
 }
 
 .card:hover {
@@ -292,9 +324,8 @@ nav .login:hover {
 }
 
 .details {
-  width: 90%;
-  max-width: 960px;
-  margin: 34px auto;
+  width: 70%;
+  margin: 34px 15%;
   background: #252535;
   border: 1px solid #555;
   border-radius: 24px;
@@ -388,9 +419,8 @@ nav .login:hover {
 }
 
 .container {
-  width: 90%;
-  margin: 48px auto;
-  max-width: 1120px;
+  width: 70%;
+  margin: 48px 15%;
   background: #252535;
   padding: 44px;
   border: 1px solid #00ff9d29;
@@ -418,7 +448,7 @@ nav .login:hover {
 }
 .intro {
   max-width: 760px;
-  margin: 24px auto 36px;
+  margin: 24px 0 36px;
   text-align: center;
   color: #e9dff0;
   font-size: 17.28px;
@@ -486,9 +516,8 @@ nav .login:hover {
 }
 
 .definition {
-  width: 90%;
-  max-width: 980px;
-  margin: 34px auto;
+  width: 70%;
+  margin: 34px 15%;
   background-color: #252535;
   padding: 34px;
   border: 1px solid #00ff9d;
@@ -505,14 +534,14 @@ nav .login:hover {
 
 .definition p {
   max-width: 820px;
-  margin: 0 auto 18px;
+  margin: 0 0 18px;
   font-size: 17px;
 }
 
 .definition ol {
   text-align: left;
   max-width: 760px;
-  margin: 22px auto 0;
+  margin: 22px 0 0;
   padding: 0 0 0 28px;
 }
 
@@ -525,9 +554,8 @@ nav .login:hover {
 }
 
 .history {
-  width: 90%;
-  max-width: 980px;
-  margin: 34px auto;
+  width: 70%;
+  margin: 34px 15%;
   background-color: #333344;
   padding: 34px;
   border: 1px solid #57ccfa;
@@ -544,13 +572,12 @@ nav .login:hover {
 
 .history p {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0;
   font-size: 17px;
 }
 .selection.test {
-  width: 90%;
-  max-width: 980px;
-  margin: 34px auto 48px;
+  width: 70%;
+  margin: 34px 15% 48px;
   background-color: #f4ff61;
   padding: 34px;
   border: 1px solid #f4ff61;
@@ -565,7 +592,7 @@ nav .login:hover {
 
 .selection.test p {
   max-width: 820px;
-  margin: 0 auto 18px;
+  margin: 0 0 18px;
   font-size: 18px;
   line-height: 28px;
 }
@@ -591,13 +618,13 @@ nav .login:hover {
 
 /* sign-up page styling */
 .sign-icons {
-  margin: auto 0 auto auto;
+  margin: 0;
 }
 
 .sign-up {
   width: 600px;
   background-color: #2f2f2f;
-  margin: 20px auto;
+  margin: 20px 5%;
   padding: 40px;
   border-radius: 30px;
 }
@@ -739,7 +766,7 @@ nav .login:hover {
 .log-in {
   width: 600px;
   background-color: #2f2f2f;
-  margin: 20px auto;
+  margin: 20px 5%;
   padding: 40px;
   border-radius: 30px;
 }
