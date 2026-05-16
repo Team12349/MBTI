@@ -305,10 +305,19 @@ nav .login:hover {
 
 .details h2 {
   margin: 0 0 24px;
-  color: #f4ff61;
+  color: #00ff9d;
   text-align: center;
   text-transform: uppercase;
   font-size: 28px;
+}
+
+.details h2 a {
+  color: #00ff9d;
+  text-decoration: none;
+}
+
+.details h2 a:hover {
+  color: #f4ff61;
 }
 
 .details img {
