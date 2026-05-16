@@ -1,101 +1,58 @@
-import { validateLogin } from "./validate";
+import { validateLogin } from "./validate.js";
 
 const form = document.getElementById("form");
-const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
+const submitBtn = document.getElementById("submitBtn");
 
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  let isValid = validateLogin();
+  const isValid = validateLogin();
   if (!isValid) return;
 
-  const el = document.querySelector("#submitBtn");
-
-  let message = "";
   try {
-    const res = await fetch("http://localhost:3000/login", {
+    const res = await fetch(`http://localhost:3000/login`, {
       method: "POST",
       credentials: "include",
       body: JSON.stringify({
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value,
+        email: emailInput.value,
+        password: passwordInput.value,
       }),
       headers: {
         "Content-Type": "application/json",
       },
     });
 
-    if (!res.ok) {
-      const data = await res.json();
-      message = data.message || "Failed to sign up.";
-      throw new Error(message);
-    } else {
-      message = "Sign up successful!";
-      form.reset();
+    const data = await res.json();
+
+    if (!res.ok || !data.success) {
+      throw new Error(data.message || "Failed to log in.");
     }
+
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("currentUser", JSON.stringify(data.data));
+    window.location.href = "index.html";
+    return;
   } catch (err) {
     console.error("Error submitting form", err);
-    message = "Server connection failed.";
-    if (!el) return;
 
-    el.textContent = message;
-    el.disabled = true;
-    el.style.cursor = "not-allowed";
+    submitBtn.textContent = err.message || "Server connection failed.";
+    submitBtn.disabled = true;
+    submitBtn.style.cursor = "not-allowed";
 
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
-    el.style.cursor = "pointer";
-    el.disabled = false;
-    el.textContent = "Sign up";
-  }
-
-  try {
-    const res = await fetch("http://localhost:3000/me", {
-      credentials: "include",
-    });
-    if (!res.ok) {
-      throw new Error("Failed to fetch user data.");
-    }
-
-    const data = await res.json();
-    if (!data.success) {
-      throw new Error(data.message || "Failed to fetch user data.");
-    }
-    window.location.href = "index.html";
-    const user = data.user;
-    hideLoginButton();
-    showLogoutButton();
-  } catch (err) {
-    console.error("Error fetching user data", err);
+    submitBtn.style.cursor = "pointer";
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Log in";
   }
 });
 
-function hideLoginButton() {
-  const loginBtn = document.getElementById("loginBtn");
-  if (loginBtn) {
-    loginBtn.style.display = "none";
+function checkAuthState() {
+  if (localStorage.getItem("isLoggedIn") === "true") {
+    window.location.href = "index.html";
+    return;
   }
 }
-
-function showLogoutButton() {
-  const signupBtn = document.getElementById("signupBtn");
-  if (signupBtn) {
-    signupBtn.textContent = "Logout";
-    signupBtn.onclick = async function () {
-      try {
-        const res = await fetch("http://localhost:3000/logout", {
-          method: "POST",
-          credentials: "include",
-        });
-        if (!res.ok) {
-          throw new Error("Failed to log out.");
-        }
-        window.location.href = "index.html";
-      } catch (err) {
-        console.error("Error logging out", err);
-      }
-    };
-  }
-}
+checkAuthState();

@@ -1,4 +1,6 @@
-import { validateForm } from "./validate";
+import { validateForm } from "./validate.js";
+
+const apiOrigin = `http://${window.location.hostname}:3000`;
 
 let links = document.querySelectorAll(".navbar a");
 
@@ -21,7 +23,7 @@ form.addEventListener("submit", async function (e) {
 
   let message = "";
   try {
-    const res = await fetch("http://localhost:3000/form", {
+    const res = await fetch(`${apiOrigin}/form`, {
       method: "POST",
       body: JSON.stringify({
         name: document.getElementById("name").value,
