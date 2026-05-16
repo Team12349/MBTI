@@ -67,9 +67,28 @@ footer i {
   font-size: 22px;
 }
 
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  background-color: currentColor;
+  mask: url("../images/github.svg") center / contain no-repeat;
+  -webkit-mask: url("../images/github.svg") center / contain no-repeat;
+}
+
 footer i:hover {
   color: #00ff9d;
   cursor: pointer;
+}
+
+.github-link:hover {
+  color: #00ff9d;
 }
 
 footer div span:hover {
